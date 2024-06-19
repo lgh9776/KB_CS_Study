@@ -1,4 +1,4 @@
-6. Java의 Exception에 대해 설명해 주세요.
+6. Java의 Exception에 대해 설명해 주세요. (예외와 에러의 차이 -> 개발자가 핸들링 가능하냐?)
 > 면접
 Exception이란 프로그램 오류를 뜻합니다. Java에서는 Exception이 발생해도 프로그램이 비정상적으로 종료되지 않도록 예외 처리를 합니다.
 
@@ -13,21 +13,23 @@ Exception = 프로그램 오류
 
 
 > 공부
-1) 예외 처리
-try-catch 사용 (일반적)
+1) 예외 복구
+try-catch finally 사용 (일반적)
 try : 예외가 발생할 수 있는 코드
 catch : 예외 발생 시 처리할 코드
 
 2) 예외 회피
-throw : 예외 발생시킴
+throw : 예외 강제로 발생 시킴 -> 상위 블럭이나 catch로 예외를 던져서 
+//개발자의 책임 -> 너무 많은 예외를 발생시키면 자원 사용 많아짐!
 
-throws : 예외를 떠넘김
+throws : 예외를 떠넘김 상위 메서드로!
 메서드 시그니처에 throws를 사용해서 발생할 수 있는 예외를 선언
 -> 예외 발생 시 해당 예외를 호출자에게 던짐
 -> 예외 처리를 호출자에게 위임
 ex) public static void readFile(String fileName) throws IOException
+//개발자 책임이 아님
 
-3) ..?
+3) ..? -> CheckedException, UncheckedException
 
 GPT 답변)
 1) 예외를 잡아서 처리하기 (Catch and Handle): try-catch 블록을 사용하여 예외를 발생한 위치에서 바로 처리합니다.
@@ -57,3 +59,7 @@ ex) NullPointerException, ArithmeticException (0으로 나눌경우)
 
 사용자가 예외를 정의할 수 있는 것을 보면 뭔가 프로그램에서 이상이 생길만한 부분을 예외처리 해주면 성능이 향상될지도..?
 -> 근거를 좀 더 찾아보자.
+
+> 스터디
+예외처리가 성능에 큰 영향을 미침 -> stack trace //캡처 비용이 많이 발생함 
+비용을 줄이려면 예외처리 커스텀 하자?!, 예외를 비정상적인 상황에서 발생하자, 적정한 로그 레벨 정하기 (로그 적당히 찍기)

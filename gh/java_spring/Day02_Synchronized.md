@@ -51,8 +51,11 @@ synchronized 블록과 비슷하게 동기화를 제공
 다수의 스레드가 동시에 읽을 수 있지만, 쓰기 작업이 있을 때는 하나의 스레드만 접근 가능
 3) java.util.concurrent 패키지
 여러 동시성 컬렉션 제공
-내부적으로 동기화가 되어 있어, 별도의 동기화 없이 멀티스레드 환경에서 안전하게 사용 가능
+내부적으로 동기화가 되어 있어, 별도의 동기화 없이 멀티스레드 환경에서 안전하게 사용 
+동기화 : 시스템에서 여러 사건의 조화를 이루게 한다? 동일한 사건에 대해 조화를 이루게 한다.
 ex) ConcurrentHashMap, CopyOnWriteArrayList, ConcurrentLinkedQueue
+
+println > print + new line 이 사이에도 synchronized
 
 -------------------
 
